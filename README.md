@@ -1,47 +1,22 @@
-# HP-Business-# HP Business Communication Portfolio (GOT++ Style)
+# HP Business Communication Portfolio
 
-A curated set of applied business communication projects developed through the HP Lite Business Communication program.
+Welcome to my HP Business Communication Projects repo—a showcase of applied business communication skills with measurable results. 🚀
 
-This repository demonstrates structured email writing, professional reporting, presentation design, and workplace communication strategy.
+## Projects Overview
+| Project | Description | Dashboard Metrics | Try It Yourself |
+|---------|-------------|-----------------|----------------|
+| Team Efficiency | Improved team workflow and deadlines | [View Dashboard](Dashboard/Project_Metrics.xlsx) | [Template & Exercise](Interactive_Templates/Email_Templates_GoogleDocs/Meeting_Request.gdoc) |
+| Client Email Management | Clearer client communication | [View Dashboard](Dashboard/Communication_Scores.xlsx) | [Try Drafting](Interactive_Templates/Email_Templates_GoogleDocs/Client_Followup.gdoc) |
+| Conflict Resolution | Resolved inter-department miscommunications | [View Dashboard](Dashboard/Project_Metrics.xlsx) | [Role-play Exercise](Exercises/Role_Play_Scenarios.md) |
 
----
+## Badges & Certifications
+![HP Lite Badge](Badges/HP_Lite_Business_Communication.png)  
+![Email Excellence](Badges/Email_Excellence_Badge.png)  
+![Team Collaboration](Badges/Team_Collaboration_Badge.png)  
 
-## 🎯 Learning Outcomes
+## Interactive Templates
+- [Email Templates - Google Docs](Interactive_Templates/Email_Templates_GoogleDocs/)
+- [Report Templates - Google Docs](Interactive_Templates/Report_Templates_GoogleDocs/)
+- [Presentation Template](Interactive_Templates/Presentation_Templates/Sample_Presentation.pptx)
 
-- Professional email drafting
-- Business report structuring
-- Active listening and conflict resolution
-- Clear presentation design
-- Team communication workflows
-
----
-
-## 📂 Repository Structure
-
-- **Abstracts/** – One-page project summaries
-- **Case_Studies/** – Real-world communication scenarios
-- **Templates/** – Reusable email & report templates
-- **Exercises/** – Applied practice modules
-- **Certifications/** – Course completion proof
-
----
-
-## 📊 Results Dashboard (Impact Metrics)
-
-- Improved team deadline adherence by 50%
-- Reduced email clarification loops by 40%
-- Increased meeting productivity through structured agendas
-- Strengthened client communication tone consistency
-
----
-
-## 🚀 How To Use
-
-1. Explore `Case_Studies` for applied examples.
-2. Use `Templates` for professional drafting.
-3. Practice scenarios in `Exercises`.
-4. Adapt metrics for your own portfolio.
-
----
-
-Developed as part of HP Lite Business Communication Program.Projects
+💡 Each template links to metrics in the Dashboard so you can see real measurable results.
