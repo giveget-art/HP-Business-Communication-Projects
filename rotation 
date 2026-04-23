@@ -1,0 +1,42 @@
+Problem
+sensing-server/src/main.rs is 3,765 lines with cyclomatic complexity ~65. It contains 12 structs, 60+ functions, and a 37-field AppStateInner god object. This was identified as Finding #2 in the quality engineering analysis (#170) and is tracked as Sprint 2 in ADR-050.
+
+Plan
+Decompose into 14 focused modules across 6 phases. See ADR-051 for the full extraction plan.
+
+Module Breakdown
+Module	Contents	~Lines
+cli.rs	Args struct, CLI parsing	100
+state.rs	AppStateInner + all DTOs	220
+signal.rs	Feature extraction, classification	350
+smoothing.rs	EMA smoothing, vital sign filtering	180
+routes_health.rs	Health/readiness/info endpoints	350
+routes_model.rs	Model management endpoints	180
+routes_recording.rs	Recording endpoints	210
+routes_training.rs	Training + adaptive endpoints	120
+routes_sensing.rs	Vitals, WASM, SONA endpoints	150
+routes_pose.rs	Pose estimation + endpoints	280
+websocket.rs	WS upgrade + client handlers	170
+udp_receiver.rs	UDP CSI frame receiver	170
+data_sources.rs	Windows WiFi + simulated data	400
+router.rs	Route assembly	80
+Result: main.rs drops to ~250 lines (startup only).
+
+Extraction Phases
+cli.rs + state.rs (types only, zero behavioral change)
+signal.rs + smoothing.rs (pure functions)
+routes_health.rs + routes_model.rs + routes_recording.rs
+routes_training.rs + routes_sensing.rs + routes_pose.rs
+websocket.rs + udp_receiver.rs + data_sources.rs
+router.rs + final cleanup
+Acceptance Criteria
+ No file over 500 lines
+ cargo check and cargo test pass after each phase
+ All existing endpoints behave identically
+ Each new module has at least smoke tests
+ AppStateInner refactored into domain sub-states
+ Add criterion benchmarks for CSI parsing, signal pipeline, WS fanout
+References
+ADR-051: Sensing Server Decomposition
+ADR-050: Quality Engineering Response
+Issue Quality Engineering Analysis: 10-Report Assessment (Security, Performance, Testing, Architecture) #170: Quality Engineering Analysis
