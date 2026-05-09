@@ -20,3 +20,8 @@ Welcome to my HP Business Communication Projects repo—a showcase of applied bu
 - [Presentation Template](Interactive_Templates/Presentation_Templates/Sample_Presentation.pptx)
 
 💡 Each template links to metrics in the Dashboard so you can see real measurable results.
+Indian Transfusion of Human Blood Rules, 1998 
+Your name karan
+Date of donation 
+Type of donation (whole blood, platelets, etc.)
+Sometimes the center’s stamp/signature
