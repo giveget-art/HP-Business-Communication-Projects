@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "HP Communication"
+
+include ':app'
+include ':common'
+include ':ui'
