@@ -1,0 +1,45 @@
+# version: 1.1.6
+---
+- hosts: localhost
+  gather_facts: true
+
+  tasks:
+    - name: Upgrade PIP
+      become: yes
+      pip:
+        name: pip
+        state: latest
+      when: (ansible_distribution != "MacOSX") and
+            (ansible_os_family != "VMware Photon OS") and
+            (ansible_os_family != "RedHat") and
+            (ansible_distribution != "Ubuntu")
+
+    - name: Upgrade PIP (Ubuntu)
+      become: yes
+      pip:
+        name: pip
+        state: latest
+      when: (ansible_distribution == "Ubuntu" and
+             ansible_distribution_major_version is version("23", '<'))
+
+    - name: Install pexpect
+      become: yes
+      pip:
+        name: pexpect
+      when: (ansible_distribution != "MacOSX") and
+            (ansible_distribution != "Ubuntu")
+
+    - name: Install pexpect (Ubuntu)
+      become: yes
+      pip:
+        name: pexpect
+      when: (ansible_distribution == "Ubuntu" and
+             ansible_distribution_major_version is version("23", '<'))
+
+    - name: Install Ubuntu 23.10 dependencies
+      become: yes
+      package:
+        name:
+          - python3-pexpect
+      when: (ansible_distribution == "Ubuntu" and
+             ansible_distribution_major_version is version("22", '>'))
