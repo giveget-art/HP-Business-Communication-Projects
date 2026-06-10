@@ -1,0 +1,46 @@
+name: Documentation
+description: Report documentation issues or improvements
+title: "[DOCS] "
+labels: [documentation]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping us improve documentation!
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: Documentation Issue
+      placeholder: What needs to be fixed or added?
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Document Location
+      placeholder: e.g., kubernetes/README.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Fix
+      placeholder: How should it be improved?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: Documentation Type
+      options:
+        - Kubernetes
+        - Gradle
+        - Deployment
+        - Build
+        - Setup
+        - Other
+    validations:
+      required: true

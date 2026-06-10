@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hp-communication-config
+  namespace: hp-communication
+data:
+  database.host: postgres-service.hp-communication.svc.cluster.local
+  database.port: "5432"
+  api.endpoint: http://hp-communication-app-service:80
+  api.timeout: 30s
+  log.level: INFO
