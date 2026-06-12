@@ -1,0 +1,60 @@
+This section explains how GitHub aggregates usage metrics for GitHub Actions.
+What is included?
+GitHub counts:
+Workflow runs that actually executed.
+Minutes consumed by those runs.
+GitHub does not count:
+Skipped workflow runs.
+Runs that consumed 0 minutes.
+All dates are calculated using UTC (Coordinated Universal Time).
+Available time ranges
+Period
+What it shows
+Current week (Mon–Sun)
+From Monday of the current week up to today
+Current month
+From the 1st day of the current month up to today
+Last month
+Entire previous calendar month
+Last 30 days
+Rolling 30-day window ending today
+Last 90 days
+Rolling 90-day window ending today
+Last year
+Aggregated data for the previous 12 months
+Custom
+User-selected range, up to 100 days long and within the last year
+Example
+Suppose today is June 7, 2026 (UTC):
+Current week → June 1–7, 2026
+Current month → June 1–7, 2026
+Last month → May 1–31, 2026
+Last 30 days → May 8–June 7, 2026
+Last 90 days → March 10–June 7, 2026
+Last year → June 2025–June 2026 aggregated monthly
+Why aggregation matters
+The metrics page helps repository and organization administrators:
+Track workflow usage trends.
+Monitor billed GitHub Actions minutes.
+Identify repositories consuming the most runner time.
+Analyze usage over specific periods for budgeting and optimization.
+For organizations using GitHub Actions heavily, these reports can help determine whether self-hosted runners or workflow optimizations might reduce costs and execution time.
+GitHub Actions metrics aggregation
+
+The time period selection feature allows you to view GitHub Actions metrics over predefined periods, as detailed in the following table. These metrics exclude skipped runs and those that use zero minutes. Data is presented using Coordinated Universal Time (UTC) days.
+Period
+Description
+Current week (Mon-Sun)
+Data from Monday through the current day when the page is viewed.
+Current month
+Data from the first of the month to the current day when the page is viewed.
+Last month
+Data from the first day to the last day of the previous month.
+Last 30 days
+Data from the last 30 days to when the page is viewed.
+Last 90 days
+Data from the last 90 days to when the page is viewed.
+Last year
+Data aggregated for the last 12 months.
+Custom
+Data from a custom date range. The range can be up to 100 days including the start and end dates and go back as far as one year
