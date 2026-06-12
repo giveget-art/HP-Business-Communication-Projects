@@ -1,3 +1,89 @@
+XThis YAML defines two Kubernetes Services that expose Pods inside the cluster.
+Service 1: hp-communication-app-service
+YAML
+apiVersion: v1
+kind: Service
+metadata:
+  name: hp-communication-app-service
+  namespace: hp-communication
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: http
+    protocol: TCP
+  selector:
+    app: hp-communication-app
+What it does:
+Creates a Service named hp-communication-app-service.
+Exists in namespace hp-communication.
+Uses ClusterIP, meaning it is only reachable from within the Kubernetes cluster.
+Exposes port 80.
+Forwards traffic to Pod port named http.
+Selects Pods with:
+YAML
+labels:
+  app: hp-communication-app
+Service 2: hp-communication-ui-service
+YAML
+apiVersion: v1
+kind: Service
+metadata:
+  name: hp-communication-ui-service
+  namespace: hp-communication
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: http
+    protocol: TCP
+  selector:
+    app: hp-communication-ui
+What it does:
+Creates a Service named hp-communication-ui-service.
+Internal-only (ClusterIP).
+Exposes port 80.
+Routes traffic to Pods labeled:
+YAML
+labels:
+  app: hp-communication-ui
+Sends requests to the container port named http.
+Important requirement
+For targetPort: http to work, the selected Pods must define a container port named http, for example:
+YAML
+containers:
+- name: app
+  image: hp/app:latest
+  ports:
+  - name: http
+    containerPort: 8080
+If the Pods instead have:
+YAML
+ports:
+- containerPort: 8080
+without the name: http, the Service will fail to route traffic correctly.
+In that case use:
+YAML
+targetPort: 8080
+instead of:
+YAML
+targetPort: http
+Resulting DNS names inside the cluster
+Pods can reach these services via:
+Plain text
+hp-communication-app-service.hp-communication.svc.cluster.local
+and
+Plain text
+hp-communication-ui-service.hp-communication.svc.cluster.local
+or simply:
+Plain text
+http://hp-communication-app-service
+http://hp-communication-ui-service
+when running in the same namespace.
+This configuration looks normal for a setup where:
+hp-communication-ui = frontend/UI
+hp-communication-app = backend/API
+with both accessible only within the cluster until an Ingress or LoadBalancer is added.
 This section explains how GitHub aggregates usage metrics for GitHub Actions.
 What is included?
 GitHub counts:
