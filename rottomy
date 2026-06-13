@@ -1,0 +1,426 @@
+Those are actually three completely different formats:
+Format
+Device
+.fap
+Flipper Zero application (written in C, compiled with Flipper SDK)
+#include <furi.h>
+#include <gui/gui.h>
+#include <gui/view_port.h>
+#include <gui/canvas.h>
+
+static void draw_callback(Canvas* canvas, void* context) {
+    UNUSED(context);
+
+    canvas_clear(canvas);
+    canvas_draw_str(canvas, 2, 10, "Maharshi Dayanand");
+    canvas_draw_str(canvas, 2, 22, "Saraswati");
+    canvas_draw_str(canvas, 2, 34, "1824 - 1883");
+    canvas_draw_str(canvas, 2, 46, "Founder Arya Samaj");
+    canvas_draw_str(canvas, 2, 58, "Back to the Vedas");
+}
+
+int32_t dayanand_app(void* p) {
+    UNUSED(p);
+
+    Gui* gui = furi_record_open(RECORD_GUI);
+
+    ViewPort* vp = view_port_alloc();
+    view_port_draw_callback_set(vp, draw_callback, NULL);
+
+    gui_add_view_port(gui, vp, GuiLayerFullscreen);
+
+    furi_delay_ms(15000);
+
+    gui_remove_view_port(gui, vp);
+    view_port_free(vp);
+
+    furi_record_close(RECORD_GUI);
+
+    return 0;
+}
+.8xp / .83p
+Texas Instruments graphing calculators
+.prg
+Generic BASIC/Commodore-style program
+A .fap file is a compiled binary, so I can't directly generate a working .fap without the Flipper SDK building it. What I can generate is the Flipper Zero source code that displays your Maharshi Dayanand Saraswati information.
+Example minimal Flipper Zero app:
+C
+Build this with the Flipper SDK to produce a .fap.
+If your goal is something more interesting, I can create:
+📖 �⁠Scrollable biography app
+🧠 �⁠Maharshi Dayanand quiz game
+📚 �⁠Arya Samaj educational app
+🔥 �⁠Vedic quotes browser
+🎓 �⁠School-project style interactive encyclopedia
+all as Flipper Zero source code that can be compiled into a .fap.Make a programme of the
+
+Maharshi Dayanand Saraswati
+Maharshi Dayanand Saraswati (1824–1883) was a Hindu philosopher, social reformer, and the founder of the Arya Samaj. He was born as Mool Shankar in Tankara, Gujarat, and became one of the most influential religious reformers of 19th-century India. �
+Drishti IAS +1
+Key Ideas
+"Back to the Vedas" — He taught that the Vedas are the highest source of knowledge and truth.
+Opposed idol worship, superstition, and blind ritualism.
+Supported women's education, widow remarriage, and social equality.
+Criticized caste discrimination based solely on birth.
+Promoted education and moral reform in society. �
+Drishti IAS +1
+Arya Samaj
+He founded the Arya Samaj in 1875 in Bombay (Mumbai) to promote Vedic teachings and social reform. The movement later inspired educational institutions such as the DAV schools and colleges. �
+Drishti IAS +2
+Important Book
+His most famous work is:
+Satyarth Prakash ("The Light of Truth")
+In it, he explained his interpretation of Vedic philosophy and discussed social and religious issues. �
+www.ndtv.com +1
+Legacy
+Many historians consider him one of the major figures of the Indian social and religious reform movement. His ideas influenced later nationalists and reformers, and he is often remembered for promoting education, self-reliance, and Vedic learning. �
+Drishti IAS +2
+Birth: 12 February 1824, Tankara, Gujarat
+Death: 30 October 1883, Ajmer, Rajasthan �
+thearyasamaj.org +1
+If you'd like, I can also explain �⁠
+Maharshi Dayanand Saraswati — Views on God, the Vedas, and Idol Worship
+
+1. His View of God
+Dayanand taught that God is:
+One and only one.
+Formless (Nirakar).
+Omniscient (knows everything).
+Omnipresent (present everywhere).
+Eternal and unborn.
+Just and merciful.
+He believed God cannot be born as a human, animal, or any physical form because an infinite being cannot be limited by a body.
+The sacred syllable "Om" was regarded as the highest name of God.
+
+
+2. His View of the Vedas
+Dayanand considered the four Vedas:
+Rigveda
+Yajurveda
+Samaveda
+Atharvaveda
+to be the oldest and most authoritative scriptures.
+He taught that:
+The Vedas were revealed by God at the beginning of creation.
+They contain spiritual, moral, and practical knowledge.
+Any belief or practice should be tested against the Vedas.
+Because of this, Arya Samaj often uses the slogan "Back to the Vedas."
+
+
+3. His View of Idol Worship
+This was one of his most controversial teachings.
+Dayanand argued:
+Stone, metal, wood, or clay images are man-made.
+God is not contained inside an object.
+Worship should be directed to God Himself, not to a representation.
+He believed prayer, meditation, Vedic study, and yajna/havan were proper forms of worship.
+Many other Hindu traditions disagree and see murtis as aids to devotion rather than as ordinary objects. This is one of the biggest differences between Arya Samaj and many other Hindu schools.
+
+
+4. His View of Caste
+Dayanand taught that:
+A person's status should be based on qualities, education, and actions.
+Birth alone should not determine social rank.
+He interpreted the ancient varna system as merit-based rather than hereditary.
+
+
+5. His View on Social Reform
+He supported:
+Education for women.
+Widow remarriage.
+Opposition to child marriage.
+Universal education.
+Social uplift and moral reform.
+These ideas made Arya Samaj influential in modern India.
+How Arya Samaj Differs from Many Other Hindu Traditions
+Topic
+Arya Samaj
+Many Other Hindu Traditions
+God
+One, formless God
+One God may be worshipped through many forms
+Idol Worship
+Rejected
+Often accepted
+Main Scriptures
+Vedas primarily
+Vedas plus Puranas, Agamas, epics, etc.
+Avatars
+Generally rejected
+Many traditions accept avatars such as Rama and Krishna
+Worship
+Havan, prayer, Vedic recitation
+Bhakti, temple worship, puja, meditation, yoga, etc.
+Caste
+Based on merit and conduct
+Views vary among traditions and communities
+Did Dayanand Consider Himself Outside Hinduism?
+No. Dayanand saw himself as reforming Hindu society and restoring what he believed was the original Vedic religion. Followers of the Arya Samaj generally consider themselves Hindus, although some of their beliefs differ significantly from many mainstream Hindu traditions.
+The main idea behind his teachings can be summarized as:
+Worship the one formless God, learn from the Vedas, use reason, perform righteous actions, and avoid practices that he believed were not supported by Vedic teachings.
+The text you pasted is a summary of Maharshi Dayanand Saraswati and his role in founding the Arya Samaj.
+The core of his message can be reduced to a few points:
+One formless God (Nirakar Ishwar).
+The Vedas are the highest authority in religion.
+Truth should be accepted and falsehood rejected, regardless of tradition.
+Idol worship is not Vedic (according to his interpretation).
+Education for everyone, including women.
+Caste should depend on qualities and actions, not merely birth.
+Havan, prayer, and righteous living are central to worship.
+His famous motto is often summarized as:
+"Back to the Vedas."
+At the same time, it's worth noting that many Hindus respect Dayanand as a reformer while disagreeing with some of his conclusions—especially regarding murtis, avatars, and later Hindu scriptures. Hindu traditions are diverse, and there isn't a single view accepted by everyone.
+His most influential book is:
+Satyarth Prakash ("The Light of Truth")
+And his organization:
+Arya Samaj
+had a major impact on education through the DAV institutions and on social reform movements in North India.
+If you're interested in Dayanand's philosophy, one of the most important questions is why he believed the Vedas teach a formless God and rejected idol worship. That's where most of the debates about his teachings begin.
+Here is a complete school/college project on Maharshi Dayanand Saraswati that you can write directly in your notebook or submit as a report.
+Project: Maharshi Dayanand Saraswati and Arya Samaj
+Cover Page
+Title: Maharshi Dayanand Saraswati – Life, Philosophy and Contributions
+Submitted By: ___________
+Class: ___________
+Roll No.: ___________
+School/College: ___________
+Index
+Introduction
+Early Life
+Search for Truth
+Main Teachings
+Views on God
+Views on the Vedas
+Views on Idol Worship
+Social Reforms
+Arya Samaj
+Satyarth Prakash
+Legacy and Influence
+Conclusion
+Bibliography
+
+
+6. Introduction
+Maharshi Dayanand Saraswati was one of the greatest social and religious reformers of India. He worked to revive Vedic knowledge and remove social evils from society. His teachings encouraged people to follow truth, reason, education, and moral values. He is best known as the founder of Arya Samaj.
+
+
+7. Early Life
+Maharshi Dayanand Saraswati was born on 12 February 1824 in Tankara. His childhood name was Mool Shankar.
+From a young age, he was interested in religion and spirituality. After witnessing practices that raised questions in his mind, he began searching for the true nature of God and religion.
+
+
+8. Search for Truth
+Dayanand traveled across India for many years, studying different philosophies and scriptures. He learned Sanskrit and Vedic literature from various scholars.
+His search convinced him that the original teachings of the Vedas contained the highest truth and that many later practices had moved away from these teachings.
+
+
+9. Main Teachings
+His teachings can be summarized as:
+Believe in one God.
+Follow truth and reject falsehood.
+Study and respect the Vedas.
+Promote education for all.
+Oppose social discrimination.
+Live a moral and disciplined life.
+Serve society and humanity.
+His famous slogan was:
+"Back to the Vedas."
+
+
+10. Views on God
+According to Dayanand Saraswati:
+God is one.
+God is formless (Nirakar).
+God is eternal and all-powerful.
+God is present everywhere.
+God is just and merciful.
+He believed that God cannot be limited to any physical form.
+
+
+11. Views on the Vedas
+Dayanand regarded the four Vedas as the most authoritative scriptures:
+Rigveda
+Yajurveda
+Samaveda
+Atharvaveda
+He taught that the Vedas contain spiritual, ethical, and practical knowledge useful for human life.
+
+
+12. Views on Idol Worship
+One of Dayanand's most well-known views was his opposition to idol worship.
+He argued that:
+God is formless.
+Human-made objects cannot contain God.
+Worship should focus directly on God through prayer, meditation, study of the Vedas, and havan.
+This view became one of the distinguishing features of Arya Samaj.
+
+
+13. Social Reforms
+Dayanand Saraswati worked for many social reforms:
+Women's Education
+He strongly supported education for women.
+Widow Remarriage
+He encouraged widows to remarry and live with dignity.
+Opposition to Child Marriage
+He opposed the practice of child marriage.
+Equality
+He criticized caste discrimination based solely on birth.
+Universal Education
+He believed every person should have access to education.
+
+
+14. Arya Samaj
+In 1875, Dayanand founded the Arya Samaj in Mumbai.
+The objectives of Arya Samaj were:
+Spread Vedic teachings.
+Promote social reform.
+Encourage education.
+Remove superstition and social evils.
+Develop moral character.
+Arya Samaj later established many educational institutions, including DAV schools and colleges.
+
+
+15. Satyarth Prakash
+Dayanand's most famous book is:
+Satyarth Prakash
+In this book, he explained:
+Vedic philosophy
+Religious beliefs
+Social reforms
+Moral principles
+The book remains an important text for followers of Arya Samaj.
+
+
+16. Legacy and Influence
+Dayanand Saraswati greatly influenced modern India.
+His contributions include:
+Revival of Vedic studies
+Promotion of education
+Advancement of women's rights
+Encouragement of social equality
+Inspiration for future reformers and nationalists
+Many educational institutions and social organizations continue to follow his ideals today.
+
+
+17. Conclusion
+Maharshi Dayanand Saraswati was a visionary reformer who dedicated his life to truth, education, and social improvement. Through Arya Samaj and his teachings, he inspired millions to follow reason, morality, and Vedic wisdom. His contributions continue to influence Indian society and education even today.
+
+
+18. Bibliography
+Satyarth Prakash – Maharshi Dayanand Saraswati
+Books on Indian Social Reform Movements
+Arya Samaj literature
+History textbooks on 19th-century India
+Viva Questions
+Who was Maharshi Dayanand Saraswati?
+What was his childhood name?
+When was Arya Samaj founded?
+What is meant by "Back to the Vedas"?
+What is Satyarth Prakash?
+What were his views on caste?
+Why is he considered a social reformer?
+What were his views on women's education?
+Where was he born?
+When did he die?
+Birth: 12 February 1824
+Death: 30 October 1883
+Founder of: Arya Samaj
+Famous Book: Satyarth Prakash
+Famous Motto: "Back to the Vedas"
+To be run on flipper zero new edition
+If by "to be run on Flipper Zero new edition" you mean a program/app for the Flipper Zero device, then a long biography project cannot really be "run" directly as a Flipper application. However, you can display the information as a text file on the Flipper.
+Create a file named dayanand.txt:
+Plain text
+MAHARSHI DAYANAND SARASWATI
+
+Birth: 12 February 1824
+Place: Tankara, Gujarat
+
+Founder of Arya Samaj (1875)
+
+MAIN IDEAS
+- Back to the Vedas
+- One Formless God
+- Truth over superstition
+- Education for all
+- Social equality
+- Women's education
+- Widow remarriage
+- Opposition to child marriage
+
+VIEWS
+God:
+One, eternal, formless and omnipresent.
+
+Vedas:
+Rigveda
+Yajurveda
+Samaveda
+Atharvaveda
+
+Idol Worship:
+Rejected by Dayanand because God is formless.
+
+CASTE:
+Based on qualities, education and actions,
+not birth alone.
+
+BOOK:
+Satyarth Prakash
+(The Light of Truth)
+
+ARYA SAMAJ OBJECTIVES
+- Spread Vedic teachings
+- Promote education
+- Remove social evils
+- Encourage moral character
+
+LEGACY
+Inspired social reform, education,
+DAV institutions and Vedic learning.
+
+Death:
+30 October 1883
+Ajmer, Rajasthan
+
+MOTTO:
+"Back to the Vedas"
+If instead you want an actual Flipper Zero application written in C, tell me:
+Firmware (Official, Momentum, RogueMaster, etc.)
+Whether you want a scrolling biography screen or a menu-based app
+and I'll generate the complete Flipper Zero source code.If by .prg you mean a classic BASIC program file format (such as Commodore-style PRG), you can represent the information as a simple text-display program:
+Basic
+10 PRINT "MAHARSHI DAYANAND SARASWATI"
+20 PRINT "BORN: 12 FEBRUARY 1824"
+30 PRINT "TANKARA, GUJARAT"
+40 PRINT
+50 PRINT "FOUNDER OF ARYA SAMAJ (1875)"
+60 PRINT
+70 PRINT "KEY IDEAS:"
+80 PRINT "- BACK TO THE VEDAS"
+90 PRINT "- ONE FORMLESS GOD"
+100 PRINT "- EDUCATION FOR ALL"
+110 PRINT "- SOCIAL EQUALITY"
+120 PRINT "- WOMEN'S EDUCATION"
+130 PRINT "- WIDOW REMARRIAGE"
+140 PRINT
+150 PRINT "VIEWS:"
+160 PRINT "GOD IS ONE, ETERNAL,"
+170 PRINT "FORMLESS AND OMNIPRESENT."
+180 PRINT
+190 PRINT "VEDAS:"
+200 PRINT "RIGVEDA"
+210 PRINT "YAJURVEDA"
+220 PRINT "SAMAVEDA"
+230 PRINT "ATHARVAVEDA"
+240 PRINT
+250 PRINT "BOOK:"
+260 PRINT "SATYARTH PRAKASH"
+270 PRINT
+280 PRINT "MOTTO:"
+290 PRINT CHR$(34);"BACK TO THE VEDAS";CHR$(34)
+300 PRINT
+310 PRINT "DEATH: 30 OCTOBER 1883"
+320 PRINT "AJMER, RAJASTHAN"
+330 END
+If you mean a Flipper Zero .fap application, a Texas Instruments .8xp/.83p program, or another specific .prg format, tell me the target system and I'll convert it appropriately.
