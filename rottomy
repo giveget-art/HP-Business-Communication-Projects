@@ -424,3 +424,58 @@ Basic
 320 PRINT "AJMER, RAJASTHAN"
 330 END
 If you mean a Flipper Zero .fap application, a Texas Instruments .8xp/.83p program, or another specific .prg format, tell me the target system and I'll convert it appropriately.
+Those are actually three completely different formats:
+Format
+Device
+.fap
+Flipper Zero application (written in C, compiled with Flipper SDK)
+.8xp / .83p
+Texas Instruments graphing calculators
+.prg
+Generic BASIC/Commodore-style program
+A .fap file is a compiled binary, so I can't directly generate a working .fap without the Flipper SDK building it. What I can generate is the Flipper Zero source code that displays your Maharshi Dayanand Saraswati information.
+Example minimal Flipper Zero app:
+C
+#include <furi.h>
+#include <gui/gui.h>
+#include <gui/view_port.h>
+#include <gui/canvas.h>
+
+static void draw_callback(Canvas* canvas, void* context) {
+    UNUSED(context);
+
+    canvas_clear(canvas);
+    canvas_draw_str(canvas, 2, 10, "Maharshi Dayanand");
+    canvas_draw_str(canvas, 2, 22, "Saraswati");
+    canvas_draw_str(canvas, 2, 34, "1824 - 1883");
+    canvas_draw_str(canvas, 2, 46, "Founder Arya Samaj");
+    canvas_draw_str(canvas, 2, 58, "Back to the Vedas");
+}
+
+int32_t dayanand_app(void* p) {
+    UNUSED(p);
+
+    Gui* gui = furi_record_open(RECORD_GUI);
+
+    ViewPort* vp = view_port_alloc();
+    view_port_draw_callback_set(vp, draw_callback, NULL);
+
+    gui_add_view_port(gui, vp, GuiLayerFullscreen);
+
+    furi_delay_ms(15000);
+
+    gui_remove_view_port(gui, vp);
+    view_port_free(vp);
+
+    furi_record_close(RECORD_GUI);
+
+    return 0;
+}
+Build this with the Flipper SDK to produce a .fap.
+If your goal is something more interesting, I can create:
+📖 �⁠Scrollable biography app
+🧠 �⁠Maharshi Dayanand quiz game
+📚 �⁠Arya Samaj educational app
+🔥 �⁠Vedic quotes browser
+🎓 �⁠School-project style interactive encyclopedia
+all as Flipper Zero source code that can be compiled into a .fap.
