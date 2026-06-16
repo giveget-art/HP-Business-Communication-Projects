@@ -21,7 +21,5 @@ Welcome to my HP Business Communication Projects repo—a showcase of applied bu
 
 💡 Each template links to metrics in the Dashboard so you can see real measurable results.
 Indian Transfusion of Human Blood Rules, 1998 
-Your name karan
-Date of donation 
-Type of donation (whole blood, platelets, etc.)
+Your name 
 Sometimes the center’s stamp/signature
