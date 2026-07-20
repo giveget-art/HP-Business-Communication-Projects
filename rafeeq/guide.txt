@@ -69,3 +69,5 @@ Cf. $gmane/212353
 Cf. gmane/212570
 - Reference to a programming discussion.
 - About getenv(3) return values and environment variables.
+gzip, tree, vim/neovim, Download Git source archive (git-2.54.0.tar.gz), Extract archive (tar -xzf git-2.54.0.tar.gz), Enter source tree (cd git-2.54.0), View source tree (tree), Search text (grep -R "pattern" .), Edit files (vim/nvim), Build (make — ensure Makefile present), Install (sudo make install).
+These as new files to rafeeq in repo hp communication
