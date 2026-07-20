@@ -1,0 +1,7 @@
+Cf. gmane/212570
+
+Meaning:
+A reference/citation to another Gmane archive message.
+
+Topic:
+C programming: "The return value from getenv(3) may be volatile across calls."

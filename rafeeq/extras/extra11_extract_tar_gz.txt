@@ -1,0 +1,7 @@
+"Extract .tar.gz archives"
+
+Meaning:
+Explanation text.
+
+Actual command:
+tar -xzf filename.tar.gz

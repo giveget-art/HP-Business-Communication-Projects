@@ -1,0 +1,61 @@
+Git Repository / Git Source Setup Guide (integrated with gmane references)
+
+Overview
+
+This document integrates two gmane developer-discussion summaries (gmane/212353 and gmane/212570) with a minimal guide to building Git from source. The gmane threads are used as the primary criteria for clarifying developer notes about commit annotations and C API/environment behavior; the other text fragments are kept as side-note extras in the rafeeq/extras/ folder.
+
+Primary gmane summaries (used as source)
+
+1) gmane/212353 — Annotations, commit objects, and history behavior
+- Topic summary: Developer discussion about how Git annotations (notes, refs, or external metadata) interact with commit objects and how commit history is interpreted when annotated commits appear. Key points: annotations should not alter the commit object itself; history traversal and object identity depend solely on commit object hashes. Care is required when presenting annotated views of history so clients and scripts do not assume annotations change commit identity or reachability.
+- Practical implication: tooling that adds annotations should store metadata separately (e.g., git notes, refs) and avoid rewriting commits unless explicitly intended.
+
+2) gmane/212570 — getenv(3) return values and environment variables
+- Topic summary: Discussion about C's getenv(3) semantics: the returned pointer may be volatile across subsequent getenv calls or other environment-modifying calls. Callers should not assume repeated getenv() returns the same pointer or that the pointer remains valid across calls that modify the environment (setenv, unsetenv, putenv).
+- Practical implication: copy getenv results if you need stable storage; avoid using pointers returned by getenv across code that may mutate the environment.
+
+Integrated Guide (Git build steps with developer notes)
+
+1. Install required packages (examples — Debian/Ubuntu)
+- Minimal listed packages (examples): git, tar, gzip, tree, vim, clang, make
+- Recommended additional build dependencies for full Git functionality:
+  - zlib1g-dev
+  - libssl-dev (or appropriate OpenSSL/LibreSSL dev package)
+  - libcurl4-gnutls-dev (or libcurl4-openssl-dev)
+  - libexpat1-dev
+  - gettext
+
+Developer note (gmane/212353): annotation tooling and additional features should not rewrite commit objects during packaging. Build-time tools that embed metadata should prefer git notes or separate refs.
+
+2. Download Git source archive
+- Example filename: git-2.54.0.tar.gz
+- Verify checksum (recommended) and origin before building.
+
+3. Extract the archive
+- Command: tar -xzf git-2.54.0.tar.gz
+
+4. Enter the source tree
+- Command: cd git-2.54.0
+
+5. View the source tree
+- Command: tree
+
+6. Search text in files
+- Command: grep -R "pattern" .
+
+7. Edit files
+- Command: vim <file>
+
+8. Compile / Build
+- Command: make
+- Optional developer note: use parallel builds when helpful: make -j$(nproc)
+
+9. Install the built program
+- Command: sudo make install
+
+Developer note (gmane/212570): when editing or adding C code in the Git source, be mindful of getenv() usage — copy returned strings if environment may change, and avoid assuming stability of getenv pointers across function calls.
+
+Repository / citation
+- Source references (summaries used in this file): gmane/212353, gmane/212570
+
+End of rafeeq/gmane.txt

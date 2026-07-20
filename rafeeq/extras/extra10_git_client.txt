@@ -1,0 +1,6 @@
+"Git client"
+
+Meaning:
+Explanation text.
+
+The Git program used to communicate with repositories.

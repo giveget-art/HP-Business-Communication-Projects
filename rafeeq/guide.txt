@@ -1,0 +1,71 @@
+Git Repository / Git Source Setup Guide
+
+1. Install required packages
+
+Packages:
+- git
+- tar
+- gzip
+- tree
+- vim
+- clang
+- make
+
+
+2. Download Git source archive
+
+Example:
+git-2.54.0.tar.gz
+
+
+3. Extract the archive
+
+Command:
+tar -xzf git-2.54.0.tar.gz
+
+
+4. Enter the source tree
+
+Command:
+cd git-2.54.0
+
+
+5. View the source tree
+
+Command:
+tree
+
+
+6. Search text in files
+
+Command:
+grep
+
+
+7. Edit files
+
+Command:
+vim
+
+
+8. Compile / Build
+
+Command:
+make
+
+
+9. Install the built program
+
+Command:
+make install
+
+
+Repository references:
+
+Cf. $gmane/212353
+- Reference to a Git developer discussion.
+- About annotations, commit objects, and history behaviour.
+
+Cf. gmane/212570
+- Reference to a programming discussion.
+- About getenv(3) return values and environment variables.

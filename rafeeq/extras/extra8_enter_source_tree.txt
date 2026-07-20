@@ -1,0 +1,7 @@
+"Enter the source tree"
+
+Meaning:
+A Git source-build instruction.
+
+Example:
+cd git-2.54.0

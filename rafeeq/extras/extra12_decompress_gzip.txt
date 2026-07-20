@@ -1,0 +1,9 @@
+"Decompress gzip files"
+
+Meaning:
+Explanation text.
+
+Actual commands:
+gzip -d filename.gz
+or
+gunzip filename.gz

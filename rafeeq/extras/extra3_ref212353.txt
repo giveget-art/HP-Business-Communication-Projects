@@ -1,0 +1,7 @@
+Cf. $gmane/212353
+
+Meaning:
+A reference/citation to a Gmane mailing-list archive message.
+
+Topic:
+Annotations, commit objects, and behaviour when commits appear in history.
