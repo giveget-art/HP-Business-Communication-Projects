@@ -52,6 +52,40 @@ Developer note (gmane/212353): annotation tooling and additional features should
 
 9. Install the built program
 - Command: sudo make install
+GitHub Copilot Chat Assistant — confirm before I commit (click the green-button equivalent).
+
+Target repository and location
+- Repo: giveget-art/HP-Business-Communication-Projects  
+- Branch: main  
+- Add files to: ui/deployment/rafeeq/ (will create if missing)
+
+Reference file you showed
+- Existing file: rafeeq/extras/extra2_vinyl.txt
+- URL: https://github.com/giveget-art/HP-Business-Communication-Projects/blob/main/rafeeq/extras/extra2_vinyl.txt
+
+Files I will add
+- install_gzip.sh
+- install_tree.sh
+- install_vim_neovim.sh
+- download_git_source.sh
+- extract_archive.sh
+- enter_source_tree.sh
+- view_source_tree.sh
+- search_text.sh
+- edit_files.sh
+- build_and_install.sh
+
+Commit message
+- "Add rafeeq scripts for installing tools and building Git"
+
+Risks/notes
+- Scripts may run package installs and require sudo when executed — review before running.
+- If the repo/branch is inaccessible I will report the exact error and stop.
+
+Reply with exactly one of:
+- Confirm — proceed with the commit now.  
+- Cancel — don’t commit.  
+- Edit: <changes> — specify target path, branch, commit message, or file list changes.
 
 Developer note (gmane/212570): when editing or adding C code in the Git source, be mindful of getenv() usage — copy returned strings if environment may change, and avoid assuming stability of getenv pointers across function calls.
 
